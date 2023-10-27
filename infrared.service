@@ -1,0 +1,14 @@
+[Unit]
+Description=Infrared
+After=network-online.target
+
+[Service]
+User=root
+Group=root
+ExecStart=sh /srv/infrared.sh
+Restart=on-failure
+LimitNOFILE=500000
+LimitNPROC=500000
+
+[Install]
+WantedBy=multi-user.target
